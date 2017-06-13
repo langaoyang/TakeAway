@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">TakeAway</string>
     <string name="home">主页</string>
+    <string name="order">订单</string>
+    <string name="more">更多</string>
+    <string name="user">用户</string>
 </resources>
