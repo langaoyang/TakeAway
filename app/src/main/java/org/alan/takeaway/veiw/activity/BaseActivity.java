@@ -1,4 +1,4 @@
-package org.alan.takeaway.veiw.fragment;
+package org.alan.takeaway.veiw.activity;
 
 import android.os.Build;
 import android.os.Bundle;
@@ -22,7 +22,7 @@ public class BaseActivity  extends AppCompatActivity{
 
     }
     protected void initStatusBar(int color) {
-        if (Build.VERSION.SDK_INT> Build.VERSION_CODES.KITKAT){
+        if (Build.VERSION.SDK_INT> Build.VERSION_CODES.KITKAT){//4.4 版本以上要先将状态栏设置透明。
             Window window = getWindow();
             WindowManager.LayoutParams attributes = window.getAttributes();
             attributes.flags = WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS;
@@ -32,4 +32,6 @@ public class BaseActivity  extends AppCompatActivity{
         manager.setStatusBarTintEnabled(true);
         manager.setTintColor(color);
     }
+
+
 }

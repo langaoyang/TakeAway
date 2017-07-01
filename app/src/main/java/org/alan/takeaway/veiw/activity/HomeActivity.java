@@ -9,7 +9,6 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import org.alan.takeaway.R;
-import org.alan.takeaway.veiw.fragment.BaseActivity;
 import org.alan.takeaway.veiw.fragment.HomeFragment;
 import org.alan.takeaway.veiw.fragment.MoreFragment;
 import org.alan.takeaway.veiw.fragment.OrderFragment;
@@ -18,7 +17,7 @@ import org.alan.takeaway.veiw.fragment.UserFragment;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class MainActivity extends BaseActivity {
+public class HomeActivity extends BaseActivity {
 
 
     @BindView(R.id.home_fragments)
@@ -31,16 +30,15 @@ public class MainActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_home);
         ButterKnife.bind(this);
         //初始化每个选项卡enable
         mCurrentTag = 0;
         initTabs();
+        selectIndexTab(0);
         initStatusBar(getResources().getColor(R.color.colorPrimary));
 
-
     }
-
 
 
     private void initTabs() {
@@ -73,6 +71,11 @@ public class MainActivity extends BaseActivity {
             }
         }
         getSupportFragmentManager().beginTransaction().replace(R.id.home_fragments, fragments[mCurrentTag]).commit();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
     }
 
 }

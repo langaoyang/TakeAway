@@ -38,5 +38,6 @@ dependencies {
     annotationProcessor 'com.google.dagger:dagger-compiler:2.9'
     compile 'com.android.support:recyclerview-v7:25.2.0'
     compile 'com.android.support:design:25.3.0'
+    //支持状态栏着色。支持4.4以上设备
     compile 'com.readystatesoftware.systembartint:systembartint:1.0.3'
 }

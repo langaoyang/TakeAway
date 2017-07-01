@@ -9,11 +9,11 @@ import java.util.List;
  * Created by Administrator on 2017/4/5.
  */
 
-public class HomPresenter {
+public class HomePresenter {
 
     private HomeFragment view;
 
-    public HomPresenter(HomeFragment view) {
+    public HomePresenter(HomeFragment view) {
         this.view = view;
     }
 
@@ -21,8 +21,9 @@ public class HomPresenter {
         view.showLoading();
         List<String> list = new ArrayList<>();
         for (int i = 0; i < 30; i++) {
-            list.add("position " + i);
+            list.add("商家    " + i);
         }
+        //显示rv
         view.showRv(list);
     }
 }
